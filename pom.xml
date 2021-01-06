@@ -47,16 +47,6 @@
             </dependency>
             <dependency>
                 <groupId>com.qibao</groupId>
-                <artifactId>qibao-common-util</artifactId>
-                <version>1.0-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.qibao</groupId>
-                <artifactId>qibao-common-log</artifactId>
-                <version>1.0-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.qibao</groupId>
                 <artifactId>qibao-spring-boot-starts</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
