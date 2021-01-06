@@ -1,4 +1,4 @@
-package com.qibao.core.filter;
+package com.qibao.common.log;
 
 import com.qibao.core.util.UUIDGenerator;
 import org.slf4j.MDC;

@@ -9,8 +9,23 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>common</artifactId>
+    <!--    <groupId>com.qibao</groupId>-->
+    <name>qibao-common</name>
+    <artifactId>qibao-common</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+
+    <modules>
+        <module>qibao-common-util</module>
+        <module>qibao-common-log</module>
+    </modules>
+
     <dependencies>
+        <dependency>
+            <groupId>com.qibao</groupId>
+            <artifactId>qibao-test</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper</artifactId>
@@ -31,6 +46,11 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.5.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
         </dependency>
     </dependencies>
 
