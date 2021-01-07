@@ -23,18 +23,29 @@
     </modules>
 
     <properties>
+        <commons_lang3_version>3.7</commons_lang3_version>
         <!-- 主要依赖库的版本定义 -->
         <!-- LOG -->
         <slf4j.version>1.7.12</slf4j.version>
         <jcloverslf4j.version>1.7.12</jcloverslf4j.version>
-
-
         <!-- Plugin的属性定义 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>2.1.17.RELEASE</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons_lang3_version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>com.qibao</groupId>
                 <artifactId>qibao-test</artifactId>
