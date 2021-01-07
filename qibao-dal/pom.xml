@@ -9,14 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>qibao-app</artifactId>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.qibao</groupId>
-            <artifactId>qibao-web</artifactId>
-        </dependency>
-    </dependencies>
+    <artifactId>qibao-dal</artifactId>
 
 
 </project>

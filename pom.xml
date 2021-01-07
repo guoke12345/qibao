@@ -20,6 +20,9 @@
         <module>qibao-test</module>
         <module>qibao-spring-boot-starts</module>
         <module>qibao-app</module>
+        <module>qibao-web</module>
+        <module>qibao-service</module>
+        <module>qibao-dal</module>
     </modules>
 
     <properties>
@@ -30,6 +33,8 @@
         <jcloverslf4j.version>1.7.12</jcloverslf4j.version>
         <!-- Plugin的属性定义 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring-boot-version>2.1.17.RELEASE</spring-boot-version>
+        <qibao-version>1.0-SNAPSHOT</qibao-version>
     </properties>
 
     <dependencyManagement>
@@ -37,7 +42,13 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
-                <version>2.1.17.RELEASE</version>
+                <version>${spring-boot-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>4.0.1</version>
             </dependency>
 
             <dependency>
@@ -49,28 +60,38 @@
             <dependency>
                 <groupId>com.qibao</groupId>
                 <artifactId>qibao-test</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>${qibao-version}</version>
             </dependency>
             <dependency>
                 <groupId>com.qibao</groupId>
                 <artifactId>qibao-common</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>${qibao-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.qibao</groupId>
+                <artifactId>qibao-dal</artifactId>
+                <version>${qibao-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.qibao</groupId>
+                <artifactId>qibao-service</artifactId>
+                <version>${qibao-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.qibao</groupId>
+                <artifactId>qibao-web</artifactId>
+                <version>${qibao-version}</version>
             </dependency>
             <dependency>
                 <groupId>com.qibao</groupId>
                 <artifactId>qibao-spring-boot-starts</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>${qibao-version}</version>
             </dependency>
             <dependency>
                 <groupId>com.qibao</groupId>
                 <artifactId>qibao-spring-boot-start-web</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>${qibao-version}</version>
             </dependency>
-            <!--            <dependency>-->
-            <!--                <groupId>com.qibao</groupId>-->
-            <!--                <artifactId>qibao-webutils</artifactId>-->
-            <!--                <version>1.0-SNAPSHOT</version>-->
-            <!--            </dependency>-->
         </dependencies>
     </dependencyManagement>
 

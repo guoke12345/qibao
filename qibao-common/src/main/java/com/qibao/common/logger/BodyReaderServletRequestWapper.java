@@ -7,8 +7,10 @@ import javax.servlet.ReadListener;
 import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
+import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 class BodyReaderServletRequestWapper extends HttpServletRequestWrapper {
     private byte[] requestBody = null;
@@ -41,5 +43,11 @@ class BodyReaderServletRequestWapper extends HttpServletRequestWrapper {
             public void setReadListener(ReadListener readListener) {
             }
         };
+    }
+
+    @Override
+    public BufferedReader getReader() throws IOException {
+        InputStreamReader reader = new InputStreamReader(getInputStream());
+        return new BufferedReader(reader);
     }
 }

@@ -1,12 +1,10 @@
 package com.qibao.common.logger;
 
 import com.sun.jndi.toolkit.url.UrlUtil;
-import org.mockito.internal.util.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
 import org.springframework.lang.Nullable;
-import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
@@ -26,9 +24,8 @@ import java.util.UUID;
  * @author qibao
  * @version v0.1 2021/1/7
  */
-@Component
 public class LogInterceptor extends HandlerInterceptorAdapter {
-    Logger logger = LoggerFactory.getLogger(LogInterceptor.class);
+    private static final Logger logger = LoggerFactory.getLogger(LogInterceptor.class);
     /**
      * logback 日志记得添加这个变量
      */
@@ -67,12 +64,11 @@ public class LogInterceptor extends HandlerInterceptorAdapter {
         Map<String, Object> map = new HashMap<>();
         map.put("servletPath", request.getServletPath());
         String contentType = request.getContentType();
-        map.put("contentType", request.getContentType());
+        map.put("contentType", contentType);
         String queryString = request.getQueryString();
         queryString = (queryString == null ? queryString : UrlUtil.decode(queryString, "UTF-8"));
         map.put("queryString", queryString);
 
-        ServletInputStream inputStream = request.getInputStream();
         String type = null;
         if (!StringUtils.isEmpty(contentType)) {
             type = contentType.split(";")[0];
@@ -88,7 +84,10 @@ public class LogInterceptor extends HandlerInterceptorAdapter {
             }
         } else {
             Map<String, String[]> requestParameterMap = request.getParameterMap();
-            bufferParam.append(requestParameterMap);
+            Map<String, String> result = new HashMap<>();
+            requestParameterMap.entrySet().stream()
+                    .forEach((o) -> result.put(o.getKey(), o.getValue()[0]));
+            bufferParam.append(result);
         }
 
         map.put("params", bufferParam);
