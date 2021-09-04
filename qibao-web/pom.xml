@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>com.qibao</groupId>
-            <artifactId>qibao-service</artifactId>
+            <artifactId>qibao-common</artifactId>
         </dependency>
     </dependencies>
 </project>
